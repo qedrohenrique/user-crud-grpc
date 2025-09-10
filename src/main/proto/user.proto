@@ -6,6 +6,7 @@ option java_outer_classname = "UserProto";
 
 service UserCrud {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse) {}
 }
 
 message CreateUserRequest {
@@ -14,5 +15,13 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse {
+  string message = 1;
+}
+
+message DeleteUserRequest {
+  int64 id = 1;
+}
+
+message DeleteUserResponse {
   string message = 1;
 }
